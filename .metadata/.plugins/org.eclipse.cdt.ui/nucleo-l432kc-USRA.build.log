@@ -1,0 +1,10 @@
+21:03:30 **** Incremental Build of configuration Debug for project nucleo-l432kc-USRA ****
+make -j24 all 
+arm-none-eabi-size  nucleo-l432kc-USRA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11124	     12	   1708	  12844	   322c	nucleo-l432kc-USRA.elf
+Finished building: default.size.stdout
+ 
+
+21:03:30 Build Finished. 0 errors, 0 warnings. (took 198ms)
+

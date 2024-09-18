@@ -1,0 +1,1515 @@
+12:49:42 **** Incremental Build of configuration Debug for project AD5761_Test ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/ad5761r.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ad5761r.d" -MT"Core/Src/ad5761r.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ad5761r.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/ad5761r.c:71:1: error: unknown type name 'int32_t'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:48:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+   47 | #include "no_os_alloc.h"
+  +++ |+#include <stdint.h>
+   48 | 
+../Core/Src/ad5761r.c:72:23: error: unknown type name 'uint8_t'
+   72 |                       uint8_t reg_addr_cmd,
+      |                       ^~~~~~~
+../Core/Src/ad5761r.c:72:23: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:73:23: error: unknown type name 'uint16_t'
+   73 |                       uint16_t reg_data)
+      |                       ^~~~~~~~
+../Core/Src/ad5761r.c:73:23: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:105:1: error: unknown type name 'int32_t'
+  105 | int32_t ad5761r_read(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:105:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:106:22: error: unknown type name 'uint8_t'
+  106 |                      uint8_t reg_addr_cmd,
+      |                      ^~~~~~~
+../Core/Src/ad5761r.c:106:22: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:107:22: error: unknown type name 'uint16_t'
+  107 |                      uint16_t *reg_data)
+      |                      ^~~~~~~~
+../Core/Src/ad5761r.c:107:22: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:133:1: error: unknown type name 'int32_t'
+  133 | int32_t ad5761r_register_readback(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:133:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:135:35: error: unknown type name 'uint16_t'
+  135 |                                   uint16_t *reg_data)
+      |                                   ^~~~~~~~
+../Core/Src/ad5761r.c:135:35: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:174:1: error: unknown type name 'int32_t'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      | ^~~~~~~
+../Core/Src/ad5761r.c:174:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:174:31: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_config':
+../Core/Src/ad5761r.c:176:9: error: unknown type name 'uint16_t'
+  176 |         uint16_t reg_data;
+      |         ^~~~~~~~
+../Core/Src/ad5761r.c:176:9: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:178:20: warning: implicit declaration of function 'AD5761R_CTRL_CV' [-Wimplicit-function-declaration]
+  178 |         reg_data = AD5761R_CTRL_CV(dev->cv) |
+      |                    ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:178:39: error: invalid use of undefined type 'struct ad5761r_dev'
+  178 |         reg_data = AD5761R_CTRL_CV(dev->cv) |
+      |                                       ^~
+../Core/Src/ad5761r.c:179:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  179 |                    (dev->ovr_en ? AD5761R_CTRL_OVR : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:179:35: error: 'AD5761R_CTRL_OVR' undeclared (first use in this function)
+  179 |                    (dev->ovr_en ? AD5761R_CTRL_OVR : 0) |
+      |                                   ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:179:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/ad5761r.c:180:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  180 |                    (dev->b2c_range_en? AD5761R_CTRL_B2C : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:180:40: error: 'AD5761R_CTRL_B2C' undeclared (first use in this function)
+  180 |                    (dev->b2c_range_en? AD5761R_CTRL_B2C : 0) |
+      |                                        ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:181:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  181 |                    (dev->exc_temp_sd_en ? AD5761R_CTRL_ETS : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:181:43: error: 'AD5761R_CTRL_ETS' undeclared (first use in this function)
+  181 |                    (dev->exc_temp_sd_en ? AD5761R_CTRL_ETS : 0) |
+      |                                           ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:182:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  182 |                    (dev->int_ref_en ? AD5761R_CTRL_IRO : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:182:39: error: 'AD5761R_CTRL_IRO' undeclared (first use in this function)
+  182 |                    (dev->int_ref_en ? AD5761R_CTRL_IRO : 0) |
+      |                                       ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:183:20: warning: implicit declaration of function 'AD5761R_CTRL_PV' [-Wimplicit-function-declaration]
+  183 |                    AD5761R_CTRL_PV(dev->pv) |
+      |                    ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:183:39: error: invalid use of undefined type 'struct ad5761r_dev'
+  183 |                    AD5761R_CTRL_PV(dev->pv) |
+      |                                       ^~
+../Core/Src/ad5761r.c:184:20: warning: implicit declaration of function 'AD5761R_CTRL_RA' [-Wimplicit-function-declaration]
+  184 |                    AD5761R_CTRL_RA(dev->ra);
+      |                    ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:184:39: error: invalid use of undefined type 'struct ad5761r_dev'
+  184 |                    AD5761R_CTRL_RA(dev->ra);
+      |                                       ^~
+../Core/Src/ad5761r.c:186:16: warning: implicit declaration of function 'ad5761r_write' [-Wimplicit-function-declaration]
+  186 |         return ad5761r_write(dev, CMD_WR_CTRL_REG, reg_data);
+      |                ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:186:35: error: 'CMD_WR_CTRL_REG' undeclared (first use in this function)
+  186 |         return ad5761r_write(dev, CMD_WR_CTRL_REG, reg_data);
+      |                                   ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:197:1: error: unknown type name 'int32_t'
+  197 | int32_t ad5761r_set_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:197:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:197:47: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  197 | int32_t ad5761r_set_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      |                                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_daisy_chain_en_dis':
+../Core/Src/ad5761r.c:200:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  200 |         dev->daisy_chain_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:202:35: error: 'CMD_DIS_DAISY_CHAIN' undeclared (first use in this function)
+  202 |         return ad5761r_write(dev, CMD_DIS_DAISY_CHAIN,
+      |                                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:203:30: warning: implicit declaration of function 'AD5761R_DIS_DAISY_CHAIN_DDC' [-Wimplicit-function-declaration]
+  203 |                              AD5761R_DIS_DAISY_CHAIN_DDC(!en_dis));
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:212:1: error: unknown type name 'int32_t'
+  212 | int32_t ad5761r_get_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:212:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:212:47: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  212 | int32_t ad5761r_get_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      |                                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_daisy_chain_en_dis':
+../Core/Src/ad5761r.c:215:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  215 |         *en_dis = dev->daisy_chain_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:234:1: error: unknown type name 'int32_t'
+  234 | int32_t ad5761r_set_output_range(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:234:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:235:39: warning: 'enum ad5761r_range' declared inside parameter list will not be visible outside of this definition or declaration
+  235 |                                  enum ad5761r_range out_range)
+      |                                       ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:234:41: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  234 | int32_t ad5761r_set_output_range(struct ad5761r_dev *dev,
+      |                                         ^~~~~~~~~~~
+../Core/Src/ad5761r.c:235:53: error: parameter 2 ('out_range') has incomplete type
+  235 |                                  enum ad5761r_range out_range)
+      |                                  ~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_output_range':
+../Core/Src/ad5761r.c:237:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  237 |         dev->ra = out_range;
+      |            ^~
+../Core/Src/ad5761r.c:239:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  239 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:248:1: error: unknown type name 'int32_t'
+  248 | int32_t ad5761r_get_output_range(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:248:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:249:39: warning: 'enum ad5761r_range' declared inside parameter list will not be visible outside of this definition or declaration
+  249 |                                  enum ad5761r_range *out_range)
+      |                                       ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:248:41: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  248 | int32_t ad5761r_get_output_range(struct ad5761r_dev *dev,
+      |                                         ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_output_range':
+../Core/Src/ad5761r.c:251:25: error: invalid use of undefined type 'struct ad5761r_dev'
+  251 |         *out_range = dev->ra;
+      |                         ^~
+../Core/Src/ad5761r.c:251:20: error: invalid use of undefined type 'enum ad5761r_range'
+  251 |         *out_range = dev->ra;
+      |                    ^
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:265:1: error: unknown type name 'int32_t'
+  265 | int32_t ad5761r_set_power_up_voltage(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:265:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:266:43: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  266 |                                      enum ad5761r_scale pv)
+      |                                           ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:265:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  265 | int32_t ad5761r_set_power_up_voltage(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c:266:57: error: parameter 2 ('pv') has incomplete type
+  266 |                                      enum ad5761r_scale pv)
+      |                                      ~~~~~~~~~~~~~~~~~~~^~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_power_up_voltage':
+../Core/Src/ad5761r.c:268:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  268 |         dev->pv = pv;
+      |            ^~
+../Core/Src/ad5761r.c:270:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  270 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:279:1: error: unknown type name 'int32_t'
+  279 | int32_t ad5761r_get_power_up_voltage(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:279:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:280:43: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  280 |                                      enum ad5761r_scale *pv)
+      |                                           ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:279:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  279 | int32_t ad5761r_get_power_up_voltage(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_power_up_voltage':
+../Core/Src/ad5761r.c:282:18: error: invalid use of undefined type 'struct ad5761r_dev'
+  282 |         *pv = dev->pv;
+      |                  ^~
+../Core/Src/ad5761r.c:282:13: error: invalid use of undefined type 'enum ad5761r_scale'
+  282 |         *pv = dev->pv;
+      |             ^
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:296:1: error: unknown type name 'int32_t'
+  296 | int32_t ad5761r_set_clear_voltage(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:296:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:297:40: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  297 |                                   enum ad5761r_scale cv)
+      |                                        ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:296:42: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  296 | int32_t ad5761r_set_clear_voltage(struct ad5761r_dev *dev,
+      |                                          ^~~~~~~~~~~
+../Core/Src/ad5761r.c:297:54: error: parameter 2 ('cv') has incomplete type
+  297 |                                   enum ad5761r_scale cv)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_clear_voltage':
+../Core/Src/ad5761r.c:299:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  299 |         dev->cv = cv;
+      |            ^~
+../Core/Src/ad5761r.c:301:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  301 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:310:1: error: unknown type name 'int32_t'
+  310 | int32_t ad5761r_get_clear_voltage(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:310:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:311:40: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  311 |                                   enum ad5761r_scale *cv)
+      |                                        ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:310:42: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  310 | int32_t ad5761r_get_clear_voltage(struct ad5761r_dev *dev,
+      |                                          ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_clear_voltage':
+../Core/Src/ad5761r.c:313:18: error: invalid use of undefined type 'struct ad5761r_dev'
+  313 |         *cv = dev->cv;
+      |                  ^~
+../Core/Src/ad5761r.c:313:13: error: invalid use of undefined type 'enum ad5761r_scale'
+  313 |         *cv = dev->cv;
+      |             ^
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:326:1: error: unknown type name 'int32_t'
+  326 | int32_t ad5761r_set_internal_reference_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:326:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:326:54: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  326 | int32_t ad5761r_set_internal_reference_en_dis(struct ad5761r_dev *dev,
+      |                                                      ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_internal_reference_en_dis':
+../Core/Src/ad5761r.c:329:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  329 |         dev->int_ref_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:331:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  331 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:340:1: error: unknown type name 'int32_t'
+  340 | int32_t ad5761r_get_internal_reference_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:340:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:340:54: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  340 | int32_t ad5761r_get_internal_reference_en_dis(struct ad5761r_dev *dev,
+      |                                                      ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_internal_reference_en_dis':
+../Core/Src/ad5761r.c:343:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  343 |         *en_dis = dev->int_ref_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:356:1: error: unknown type name 'int32_t'
+  356 | int32_t ad5761r_set_exceed_temp_shutdown_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:356:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:356:56: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  356 | int32_t ad5761r_set_exceed_temp_shutdown_en_dis(struct ad5761r_dev *dev,
+      |                                                        ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_exceed_temp_shutdown_en_dis':
+../Core/Src/ad5761r.c:359:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  359 |         dev->exc_temp_sd_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:361:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  361 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:370:1: error: unknown type name 'int32_t'
+  370 | int32_t ad5761r_get_exceed_temp_shutdown_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:370:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:370:56: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  370 | int32_t ad5761r_get_exceed_temp_shutdown_en_dis(struct ad5761r_dev *dev,
+      |                                                        ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_exceed_temp_shutdown_en_dis':
+../Core/Src/ad5761r.c:373:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  373 |         *en_dis = dev->exc_temp_sd_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:387:1: error: unknown type name 'int32_t'
+  387 | int32_t ad5761r_set_2c_bipolar_range_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:387:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:387:52: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  387 | int32_t ad5761r_set_2c_bipolar_range_en_dis(struct ad5761r_dev *dev,
+      |                                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_2c_bipolar_range_en_dis':
+../Core/Src/ad5761r.c:390:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  390 |         dev->b2c_range_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:392:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  392 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:402:1: error: unknown type name 'int32_t'
+  402 | int32_t ad5761r_get_2c_bipolar_range_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:402:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:402:52: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  402 | int32_t ad5761r_get_2c_bipolar_range_en_dis(struct ad5761r_dev *dev,
+      |                                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_2c_bipolar_range_en_dis':
+../Core/Src/ad5761r.c:405:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  405 |         *en_dis = dev->b2c_range_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:418:1: error: unknown type name 'int32_t'
+  418 | int32_t ad5761r_set_overrange_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:418:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:418:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  418 | int32_t ad5761r_set_overrange_en_dis(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_overrange_en_dis':
+../Core/Src/ad5761r.c:421:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  421 |         dev->ovr_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:423:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  423 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:432:1: error: unknown type name 'int32_t'
+  432 | int32_t ad5761r_get_overrange_en_dis(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:432:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:432:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  432 | int32_t ad5761r_get_overrange_en_dis(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_overrange_en_dis':
+../Core/Src/ad5761r.c:435:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  435 |         *en_dis = dev->ovr_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:448:1: error: unknown type name 'int32_t'
+  448 | int32_t ad5761r_get_short_circuit_condition(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:448:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:448:52: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  448 | int32_t ad5761r_get_short_circuit_condition(struct ad5761r_dev *dev,
+      |                                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_short_circuit_condition':
+../Core/Src/ad5761r.c:451:9: error: unknown type name 'uint16_t'
+  451 |         uint16_t reg_data;
+      |         ^~~~~~~~
+../Core/Src/ad5761r.c:451:9: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:452:9: error: unknown type name 'int32_t'
+  452 |         int32_t ret;
+      |         ^~~~~~~
+../Core/Src/ad5761r.c:452:9: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:454:15: warning: implicit declaration of function 'ad5761r_read' [-Wimplicit-function-declaration]
+  454 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |               ^~~~~~~~~~~~
+../Core/Src/ad5761r.c:454:33: error: 'CMD_RD_CTRL_REG' undeclared (first use in this function)
+  454 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:455:28: error: 'AD5761R_CTRL_SC' undeclared (first use in this function)
+  455 |         *sc = ((reg_data & AD5761R_CTRL_SC) >> 12);
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:468:1: error: unknown type name 'int32_t'
+  468 | int32_t ad5761r_get_brownout_condition(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:468:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:468:47: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  468 | int32_t ad5761r_get_brownout_condition(struct ad5761r_dev *dev,
+      |                                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_brownout_condition':
+../Core/Src/ad5761r.c:471:9: error: unknown type name 'uint16_t'
+  471 |         uint16_t reg_data;
+      |         ^~~~~~~~
+../Core/Src/ad5761r.c:471:9: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:472:9: error: unknown type name 'int32_t'
+  472 |         int32_t ret;
+      |         ^~~~~~~
+../Core/Src/ad5761r.c:472:9: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:474:33: error: 'CMD_RD_CTRL_REG' undeclared (first use in this function)
+  474 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:475:28: error: 'AD5761R_CTRL_BO' undeclared (first use in this function)
+  475 |         *bo = ((reg_data & AD5761R_CTRL_BO) >> 11);
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:488:1: error: unknown type name 'int32_t'
+  488 | int32_t ad5761r_set_reset_pin(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:488:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:489:31: error: unknown type name 'uint8_t'
+  489 |                               uint8_t value)
+      |                               ^~~~~~~
+../Core/Src/ad5761r.c:489:31: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:505:1: error: unknown type name 'int32_t'
+  505 | int32_t ad5761r_get_reset_pin(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:505:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:506:31: error: unknown type name 'uint8_t'
+  506 |                               uint8_t *value)
+      |                               ^~~~~~~
+../Core/Src/ad5761r.c:506:31: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:523:1: error: unknown type name 'int32_t'
+  523 | int32_t ad5761r_set_clr_pin(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:523:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:524:29: error: unknown type name 'uint8_t'
+  524 |                             uint8_t value)
+      |                             ^~~~~~~
+../Core/Src/ad5761r.c:524:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:540:1: error: unknown type name 'int32_t'
+  540 | int32_t ad5761r_get_clr_pin(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:540:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:541:29: error: unknown type name 'uint8_t'
+  541 |                             uint8_t *value)
+      |                             ^~~~~~~
+../Core/Src/ad5761r.c:541:29: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:558:1: error: unknown type name 'int32_t'
+  558 | int32_t ad5761r_set_ldac_pin(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:558:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:559:30: error: unknown type name 'uint8_t'
+  559 |                              uint8_t value)
+      |                              ^~~~~~~
+../Core/Src/ad5761r.c:559:30: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:575:1: error: unknown type name 'int32_t'
+  575 | int32_t ad5761r_get_ldac_pin(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:575:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:576:30: error: unknown type name 'uint8_t'
+  576 |                              uint8_t *value)
+      |                              ^~~~~~~
+../Core/Src/ad5761r.c:576:30: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:591:1: error: unknown type name 'int32_t'
+  591 | int32_t ad5761r_write_input_register(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:591:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:592:38: error: unknown type name 'uint16_t'
+  592 |                                      uint16_t dac_data)
+      |                                      ^~~~~~~~
+../Core/Src/ad5761r.c:592:38: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:609:1: error: unknown type name 'int32_t'
+  609 | int32_t ad5761r_update_dac_register(struct ad5761r_dev *dev)
+      | ^~~~~~~
+../Core/Src/ad5761r.c:609:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:609:44: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  609 | int32_t ad5761r_update_dac_register(struct ad5761r_dev *dev)
+      |                                            ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_update_dac_register':
+../Core/Src/ad5761r.c:611:35: error: 'CMD_UPDATE_DAC_REG' undeclared (first use in this function)
+  611 |         return ad5761r_write(dev, CMD_UPDATE_DAC_REG, 0);
+      |                                   ^~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:620:1: error: unknown type name 'int32_t'
+  620 | int32_t ad5761r_write_update_dac_register(struct ad5761r_dev *dev,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:620:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:621:17: error: unknown type name 'uint16_t'
+  621 |                 uint16_t dac_data)
+      |                 ^~~~~~~~
+../Core/Src/ad5761r.c:621:17: note: 'uint16_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:638:1: error: unknown type name 'int32_t'
+  638 | int32_t ad5761r_software_data_reset(struct ad5761r_dev *dev)
+      | ^~~~~~~
+../Core/Src/ad5761r.c:638:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:638:44: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  638 | int32_t ad5761r_software_data_reset(struct ad5761r_dev *dev)
+      |                                            ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_software_data_reset':
+../Core/Src/ad5761r.c:640:35: error: 'CMD_SW_DATA_RESET' undeclared (first use in this function)
+  640 |         return ad5761r_write(dev, CMD_SW_DATA_RESET, 0);
+      |                                   ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:648:1: error: unknown type name 'int32_t'
+  648 | int32_t ad5761r_software_full_reset(struct ad5761r_dev *dev)
+      | ^~~~~~~
+../Core/Src/ad5761r.c:648:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:648:44: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  648 | int32_t ad5761r_software_full_reset(struct ad5761r_dev *dev)
+      |                                            ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_software_full_reset':
+../Core/Src/ad5761r.c:650:35: error: 'CMD_SW_FULL_RESET' undeclared (first use in this function)
+  650 |         return ad5761r_write(dev, CMD_SW_FULL_RESET, 0);
+      |                                   ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:660:1: error: unknown type name 'int32_t'
+  660 | int32_t ad5761r_init(struct ad5761r_dev **device,
+      | ^~~~~~~
+../Core/Src/ad5761r.c:660:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:661:29: warning: 'struct ad5761r_init_param' declared inside parameter list will not be visible outside of this definition or declaration
+  661 |                      struct ad5761r_init_param init_param)
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:660:29: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  660 | int32_t ad5761r_init(struct ad5761r_dev **device,
+      |                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c:661:48: error: parameter 2 ('init_param') has incomplete type
+  661 |                      struct ad5761r_init_param init_param)
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_init':
+../Core/Src/ad5761r.c:664:9: error: unknown type name 'int32_t'
+  664 |         int32_t ret = 0;
+      |         ^~~~~~~
+../Core/Src/ad5761r.c:664:9: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:666:56: error: invalid application of 'sizeof' to incomplete type 'struct ad5761r_dev'
+  666 |         dev = (struct ad5761r_dev *)no_os_malloc(sizeof(*dev));
+      |                                                        ^
+../Core/Src/ad5761r.c:672:15: warning: implicit declaration of function 'no_os_spi_init' [-Wimplicit-function-declaration]
+  672 |         ret = no_os_spi_init(&dev->spi_desc, &init_param.spi_init);
+      |               ^~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:672:34: error: invalid use of undefined type 'struct ad5761r_dev'
+  672 |         ret = no_os_spi_init(&dev->spi_desc, &init_param.spi_init);
+      |                                  ^~
+../Core/Src/ad5761r.c:675:16: warning: implicit declaration of function 'no_os_gpio_get' [-Wimplicit-function-declaration]
+  675 |         ret |= no_os_gpio_get(&dev->gpio_reset, &init_param.gpio_reset);
+      |                ^~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:675:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  675 |         ret |= no_os_gpio_get(&dev->gpio_reset, &init_param.gpio_reset);
+      |                                   ^~
+../Core/Src/ad5761r.c:676:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  676 |         dev->gpio_reset_value = init_param.gpio_reset_value;
+      |            ^~
+../Core/Src/ad5761r.c:677:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  677 |         ret |= no_os_gpio_get(&dev->gpio_clr, &init_param.gpio_clr);
+      |                                   ^~
+../Core/Src/ad5761r.c:678:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  678 |         dev->gpio_clr_value = init_param.gpio_clr_value;
+      |            ^~
+../Core/Src/ad5761r.c:679:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  679 |         ret |= no_os_gpio_get(&dev->gpio_ldac, &init_param.gpio_ldac);
+      |                                   ^~
+../Core/Src/ad5761r.c:680:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  680 |         dev->gpio_ldac_value = init_param.gpio_ldac_value;
+      |            ^~
+../Core/Src/ad5761r.c:682:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  682 |         if (dev->gpio_reset)
+      |                ^~
+../Core/Src/ad5761r.c:683:24: warning: implicit declaration of function 'no_os_gpio_direction_output' [-Wimplicit-function-declaration]
+  683 |                 ret |= no_os_gpio_direction_output(dev->gpio_reset,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:683:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  683 |                 ret |= no_os_gpio_direction_output(dev->gpio_reset,
+      |                                                       ^~
+../Core/Src/ad5761r.c:684:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  684 |                                                    dev->gpio_reset_value);
+      |                                                       ^~
+../Core/Src/ad5761r.c:686:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  686 |         if (dev->gpio_clr)
+      |                ^~
+../Core/Src/ad5761r.c:687:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  687 |                 ret |= no_os_gpio_direction_output(dev->gpio_clr,
+      |                                                       ^~
+../Core/Src/ad5761r.c:688:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  688 |                                                    dev->gpio_clr_value);
+      |                                                       ^~
+../Core/Src/ad5761r.c:689:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  689 |         if (dev->gpio_ldac)
+      |                ^~
+../Core/Src/ad5761r.c:690:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  690 |                 ret |= no_os_gpio_direction_output(dev->gpio_ldac,
+      |                                                       ^~
+../Core/Src/ad5761r.c:691:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  691 |                                                    dev->gpio_ldac_value);
+      |                                                       ^~
+../Core/Src/ad5761r.c:694:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  694 |         dev->type = init_param.type;
+      |            ^~
+../Core/Src/ad5761r.c:695:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  695 |         dev->ra = init_param.out_range;
+      |            ^~
+../Core/Src/ad5761r.c:696:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  696 |         dev->pv = init_param.pwr_voltage;
+      |            ^~
+../Core/Src/ad5761r.c:697:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  697 |         dev->cv = init_param.clr_voltage;
+      |            ^~
+../Core/Src/ad5761r.c:698:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  698 |         dev->int_ref_en = init_param.int_ref_en;
+      |            ^~
+../Core/Src/ad5761r.c:699:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  699 |         dev->exc_temp_sd_en = init_param.exc_temp_sd_en;
+      |            ^~
+../Core/Src/ad5761r.c:700:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  700 |         dev->b2c_range_en = init_param.b2c_range_en;
+      |            ^~
+../Core/Src/ad5761r.c:701:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  701 |         dev->ovr_en = init_param.ovr_en;
+      |            ^~
+../Core/Src/ad5761r.c:702:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  702 |         ret |= ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c:704:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  704 |         dev->daisy_chain_en = init_param.daisy_chain_en;
+      |            ^~
+../Core/Src/ad5761r.c:705:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  705 |         ret |= ad5761r_set_daisy_chain_en_dis(dev, dev->daisy_chain_en);
+      |                                                       ^~
+../Core/Src/ad5761r.c:705:47: warning: passing argument 1 of 'ad5761r_set_daisy_chain_en_dis' from incompatible pointer type [-Wincompatible-pointer-types]
+  705 |         ret |= ad5761r_set_daisy_chain_en_dis(dev, dev->daisy_chain_en);
+      |                                               ^~~
+      |                                               |
+      |                                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:197:60: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  197 | int32_t ad5761r_set_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      |                                        ~~~~~~~~~~~~~~~~~~~~^~~
+In file included from ../Core/Src/main.c:21:
+../Core/Src/ad5761r.c:71:30: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                              ^~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:717:1: error: unknown type name 'int32_t'
+  717 | int32_t ad5761r_remove(struct ad5761r_dev *dev)
+      | ^~~~~~~
+../Core/Src/ad5761r.c:717:1: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:717:31: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  717 | int32_t ad5761r_remove(struct ad5761r_dev *dev)
+      |                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_remove':
+../Core/Src/ad5761r.c:719:9: error: unknown type name 'int32_t'
+  719 |         int32_t ret;
+      |         ^~~~~~~
+../Core/Src/ad5761r.c:719:9: note: 'int32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/ad5761r.c:721:15: warning: implicit declaration of function 'no_os_spi_remove' [-Wimplicit-function-declaration]
+  721 |         ret = no_os_spi_remove(dev->spi_desc);
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:721:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  721 |         ret = no_os_spi_remove(dev->spi_desc);
+      |                                   ^~
+../Core/Src/ad5761r.c:723:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  723 |         if (dev->gpio_reset)
+      |                ^~
+../Core/Src/ad5761r.c:724:24: warning: implicit declaration of function 'no_os_gpio_remove' [-Wimplicit-function-declaration]
+  724 |                 ret |= no_os_gpio_remove(dev->gpio_reset);
+      |                        ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:724:45: error: invalid use of undefined type 'struct ad5761r_dev'
+  724 |                 ret |= no_os_gpio_remove(dev->gpio_reset);
+      |                                             ^~
+../Core/Src/ad5761r.c:726:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  726 |         if (dev->gpio_clr)
+      |                ^~
+../Core/Src/ad5761r.c:727:45: error: invalid use of undefined type 'struct ad5761r_dev'
+  727 |                 ret |= no_os_gpio_remove(dev->gpio_clr);
+      |                                             ^~
+../Core/Src/ad5761r.c:729:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  729 |         if (dev->gpio_ldac)
+      |                ^~
+../Core/Src/ad5761r.c:730:45: error: invalid use of undefined type 'struct ad5761r_dev'
+  730 |                 ret |= no_os_gpio_remove(dev->gpio_ldac);
+      |                                             ^~
+../Core/Src/ad5761r.c: In function 'ad5761r_config':
+../Core/Src/ad5761r.c:187:1: warning: control reaches end of non-void function [-Wreturn-type]
+  187 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_set_daisy_chain_en_dis':
+../Core/Src/ad5761r.c:204:1: warning: control reaches end of non-void function [-Wreturn-type]
+  204 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_update_dac_register':
+../Core/Src/ad5761r.c:612:1: warning: control reaches end of non-void function [-Wreturn-type]
+  612 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_software_data_reset':
+../Core/Src/ad5761r.c:641:1: warning: control reaches end of non-void function [-Wreturn-type]
+  641 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_software_full_reset':
+../Core/Src/ad5761r.c:651:1: warning: control reaches end of non-void function [-Wreturn-type]
+  651 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/ad5761r.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/ad5761r.c: In function 'ad5761r_write':
+../Core/Src/ad5761r.c:82:15: warning: implicit declaration of function 'no_os_spi_write_and_read' [-Wimplicit-function-declaration]
+   82 |         ret = no_os_spi_write_and_read(dev->spi_desc, data, 3);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:82:43: error: invalid use of undefined type 'struct ad5761r_dev'
+   82 |         ret = no_os_spi_write_and_read(dev->spi_desc, data, 3);
+      |                                           ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:105:29: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  105 | int32_t ad5761r_read(struct ad5761r_dev *dev,
+      |                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_read':
+../Core/Src/ad5761r.c:116:43: error: invalid use of undefined type 'struct ad5761r_dev'
+  116 |         ret = no_os_spi_write_and_read(dev->spi_desc, data, 3);
+      |                                           ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:134:40: warning: 'enum ad5761r_reg' declared inside parameter list will not be visible outside of this definition or declaration
+  134 |                                   enum ad5761r_reg reg,
+      |                                        ^~~~~~~~~~~
+../Core/Src/ad5761r.c:133:42: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  133 | int32_t ad5761r_register_readback(struct ad5761r_dev *dev,
+      |                                          ^~~~~~~~~~~
+../Core/Src/ad5761r.c:134:52: error: parameter 2 ('reg') has incomplete type
+  134 |                                   enum ad5761r_reg reg,
+      |                                   ~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: In function 'ad5761r_register_readback':
+../Core/Src/ad5761r.c:140:17: error: invalid use of undefined type 'struct ad5761r_dev'
+  140 |         if (!dev->daisy_chain_en) {
+      |                 ^~
+../Core/Src/ad5761r.c:146:14: error: 'AD5761R_REG_INPUT' undeclared (first use in this function)
+  146 |         case AD5761R_REG_INPUT:
+      |              ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:146:14: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/ad5761r.c:147:28: error: 'CMD_RD_INPUT_REG' undeclared (first use in this function)
+  147 |                 reg_addr = CMD_RD_INPUT_REG;
+      |                            ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:149:14: error: 'AD5761R_REG_DAC' undeclared (first use in this function)
+  149 |         case AD5761R_REG_DAC:
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:150:28: error: 'CMD_RD_DAC_REG' undeclared (first use in this function)
+  150 |                 reg_addr = CMD_RD_DAC_REG;
+      |                            ^~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:152:14: error: 'AD5761R_REG_CTRL' undeclared (first use in this function)
+  152 |         case AD5761R_REG_CTRL:
+      |              ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:153:28: error: 'CMD_RD_CTRL_REG' undeclared (first use in this function)
+  153 |                 reg_addr = CMD_RD_CTRL_REG;
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:160:28: warning: passing argument 1 of 'ad5761r_read' from incompatible pointer type [-Wincompatible-pointer-types]
+  160 |         ret = ad5761r_read(dev, reg_addr, reg_data);
+      |                            ^~~
+      |                            |
+      |                            struct ad5761r_dev *
+../Core/Src/ad5761r.c:105:42: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  105 | int32_t ad5761r_read(struct ad5761r_dev *dev,
+      |                      ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c:164:29: warning: passing argument 1 of 'ad5761r_read' from incompatible pointer type [-Wincompatible-pointer-types]
+  164 |         ret |= ad5761r_read(dev, reg_addr, reg_data);
+      |                             ^~~
+      |                             |
+      |                             struct ad5761r_dev *
+../Core/Src/ad5761r.c:105:42: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  105 | int32_t ad5761r_read(struct ad5761r_dev *dev,
+      |                      ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:174:31: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_config':
+../Core/Src/ad5761r.c:178:20: warning: implicit declaration of function 'AD5761R_CTRL_CV' [-Wimplicit-function-declaration]
+  178 |         reg_data = AD5761R_CTRL_CV(dev->cv) |
+      |                    ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:178:39: error: invalid use of undefined type 'struct ad5761r_dev'
+  178 |         reg_data = AD5761R_CTRL_CV(dev->cv) |
+      |                                       ^~
+../Core/Src/ad5761r.c:179:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  179 |                    (dev->ovr_en ? AD5761R_CTRL_OVR : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:179:35: error: 'AD5761R_CTRL_OVR' undeclared (first use in this function)
+  179 |                    (dev->ovr_en ? AD5761R_CTRL_OVR : 0) |
+      |                                   ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:180:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  180 |                    (dev->b2c_range_en? AD5761R_CTRL_B2C : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:180:40: error: 'AD5761R_CTRL_B2C' undeclared (first use in this function)
+  180 |                    (dev->b2c_range_en? AD5761R_CTRL_B2C : 0) |
+      |                                        ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:181:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  181 |                    (dev->exc_temp_sd_en ? AD5761R_CTRL_ETS : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:181:43: error: 'AD5761R_CTRL_ETS' undeclared (first use in this function)
+  181 |                    (dev->exc_temp_sd_en ? AD5761R_CTRL_ETS : 0) |
+      |                                           ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:182:24: error: invalid use of undefined type 'struct ad5761r_dev'
+  182 |                    (dev->int_ref_en ? AD5761R_CTRL_IRO : 0) |
+      |                        ^~
+../Core/Src/ad5761r.c:182:39: error: 'AD5761R_CTRL_IRO' undeclared (first use in this function)
+  182 |                    (dev->int_ref_en ? AD5761R_CTRL_IRO : 0) |
+      |                                       ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:183:20: warning: implicit declaration of function 'AD5761R_CTRL_PV' [-Wimplicit-function-declaration]
+  183 |                    AD5761R_CTRL_PV(dev->pv) |
+      |                    ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:183:39: error: invalid use of undefined type 'struct ad5761r_dev'
+  183 |                    AD5761R_CTRL_PV(dev->pv) |
+      |                                       ^~
+../Core/Src/ad5761r.c:184:20: warning: implicit declaration of function 'AD5761R_CTRL_RA' [-Wimplicit-function-declaration]
+  184 |                    AD5761R_CTRL_RA(dev->ra);
+      |                    ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:184:39: error: invalid use of undefined type 'struct ad5761r_dev'
+  184 |                    AD5761R_CTRL_RA(dev->ra);
+      |                                       ^~
+../Core/Src/ad5761r.c:186:35: error: 'CMD_WR_CTRL_REG' undeclared (first use in this function)
+  186 |         return ad5761r_write(dev, CMD_WR_CTRL_REG, reg_data);
+      |                                   ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:186:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  186 |         return ad5761r_write(dev, CMD_WR_CTRL_REG, reg_data);
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:197:47: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  197 | int32_t ad5761r_set_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      |                                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_daisy_chain_en_dis':
+../Core/Src/ad5761r.c:200:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  200 |         dev->daisy_chain_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:202:35: error: 'CMD_DIS_DAISY_CHAIN' undeclared (first use in this function)
+  202 |         return ad5761r_write(dev, CMD_DIS_DAISY_CHAIN,
+      |                                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:203:30: warning: implicit declaration of function 'AD5761R_DIS_DAISY_CHAIN_DDC' [-Wimplicit-function-declaration]
+  203 |                              AD5761R_DIS_DAISY_CHAIN_DDC(!en_dis));
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:202:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  202 |         return ad5761r_write(dev, CMD_DIS_DAISY_CHAIN,
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:212:47: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  212 | int32_t ad5761r_get_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      |                                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_daisy_chain_en_dis':
+../Core/Src/ad5761r.c:215:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  215 |         *en_dis = dev->daisy_chain_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:235:39: warning: 'enum ad5761r_range' declared inside parameter list will not be visible outside of this definition or declaration
+  235 |                                  enum ad5761r_range out_range)
+      |                                       ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:234:41: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  234 | int32_t ad5761r_set_output_range(struct ad5761r_dev *dev,
+      |                                         ^~~~~~~~~~~
+../Core/Src/ad5761r.c:235:53: error: parameter 2 ('out_range') has incomplete type
+  235 |                                  enum ad5761r_range out_range)
+      |                                  ~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_output_range':
+../Core/Src/ad5761r.c:237:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  237 |         dev->ra = out_range;
+      |            ^~
+../Core/Src/ad5761r.c:239:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  239 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:249:39: warning: 'enum ad5761r_range' declared inside parameter list will not be visible outside of this definition or declaration
+  249 |                                  enum ad5761r_range *out_range)
+      |                                       ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:248:41: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  248 | int32_t ad5761r_get_output_range(struct ad5761r_dev *dev,
+      |                                         ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_output_range':
+../Core/Src/ad5761r.c:251:25: error: invalid use of undefined type 'struct ad5761r_dev'
+  251 |         *out_range = dev->ra;
+      |                         ^~
+../Core/Src/ad5761r.c:251:20: error: invalid use of undefined type 'enum ad5761r_range'
+  251 |         *out_range = dev->ra;
+      |                    ^
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:266:43: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  266 |                                      enum ad5761r_scale pv)
+      |                                           ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:265:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  265 | int32_t ad5761r_set_power_up_voltage(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c:266:57: error: parameter 2 ('pv') has incomplete type
+  266 |                                      enum ad5761r_scale pv)
+      |                                      ~~~~~~~~~~~~~~~~~~~^~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_power_up_voltage':
+../Core/Src/ad5761r.c:268:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  268 |         dev->pv = pv;
+      |            ^~
+../Core/Src/ad5761r.c:270:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  270 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:280:43: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  280 |                                      enum ad5761r_scale *pv)
+      |                                           ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:279:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  279 | int32_t ad5761r_get_power_up_voltage(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_power_up_voltage':
+../Core/Src/ad5761r.c:282:18: error: invalid use of undefined type 'struct ad5761r_dev'
+  282 |         *pv = dev->pv;
+      |                  ^~
+../Core/Src/ad5761r.c:282:13: error: invalid use of undefined type 'enum ad5761r_scale'
+  282 |         *pv = dev->pv;
+      |             ^
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:297:40: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  297 |                                   enum ad5761r_scale cv)
+      |                                        ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:296:42: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  296 | int32_t ad5761r_set_clear_voltage(struct ad5761r_dev *dev,
+      |                                          ^~~~~~~~~~~
+../Core/Src/ad5761r.c:297:54: error: parameter 2 ('cv') has incomplete type
+  297 |                                   enum ad5761r_scale cv)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_clear_voltage':
+../Core/Src/ad5761r.c:299:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  299 |         dev->cv = cv;
+      |            ^~
+../Core/Src/ad5761r.c:301:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  301 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:311:40: warning: 'enum ad5761r_scale' declared inside parameter list will not be visible outside of this definition or declaration
+  311 |                                   enum ad5761r_scale *cv)
+      |                                        ^~~~~~~~~~~~~
+../Core/Src/ad5761r.c:310:42: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  310 | int32_t ad5761r_get_clear_voltage(struct ad5761r_dev *dev,
+      |                                          ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_clear_voltage':
+../Core/Src/ad5761r.c:313:18: error: invalid use of undefined type 'struct ad5761r_dev'
+  313 |         *cv = dev->cv;
+      |                  ^~
+../Core/Src/ad5761r.c:313:13: error: invalid use of undefined type 'enum ad5761r_scale'
+  313 |         *cv = dev->cv;
+      |             ^
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:326:54: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  326 | int32_t ad5761r_set_internal_reference_en_dis(struct ad5761r_dev *dev,
+      |                                                      ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_internal_reference_en_dis':
+../Core/Src/ad5761r.c:329:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  329 |         dev->int_ref_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:331:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  331 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:340:54: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  340 | int32_t ad5761r_get_internal_reference_en_dis(struct ad5761r_dev *dev,
+      |                                                      ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_internal_reference_en_dis':
+../Core/Src/ad5761r.c:343:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  343 |         *en_dis = dev->int_ref_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:356:56: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  356 | int32_t ad5761r_set_exceed_temp_shutdown_en_dis(struct ad5761r_dev *dev,
+      |                                                        ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_exceed_temp_shutdown_en_dis':
+../Core/Src/ad5761r.c:359:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  359 |         dev->exc_temp_sd_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:361:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  361 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:370:56: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  370 | int32_t ad5761r_get_exceed_temp_shutdown_en_dis(struct ad5761r_dev *dev,
+      |                                                        ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_exceed_temp_shutdown_en_dis':
+../Core/Src/ad5761r.c:373:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  373 |         *en_dis = dev->exc_temp_sd_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:387:52: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  387 | int32_t ad5761r_set_2c_bipolar_range_en_dis(struct ad5761r_dev *dev,
+      |                                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_2c_bipolar_range_en_dis':
+../Core/Src/ad5761r.c:390:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  390 |         dev->b2c_range_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:392:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  392 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:402:52: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  402 | int32_t ad5761r_get_2c_bipolar_range_en_dis(struct ad5761r_dev *dev,
+      |                                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_2c_bipolar_range_en_dis':
+../Core/Src/ad5761r.c:405:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  405 |         *en_dis = dev->b2c_range_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:418:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  418 | int32_t ad5761r_set_overrange_en_dis(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_overrange_en_dis':
+../Core/Src/ad5761r.c:421:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  421 |         dev->ovr_en = en_dis;
+      |            ^~
+../Core/Src/ad5761r.c:423:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  423 |         return ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:432:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  432 | int32_t ad5761r_get_overrange_en_dis(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_overrange_en_dis':
+../Core/Src/ad5761r.c:435:22: error: invalid use of undefined type 'struct ad5761r_dev'
+  435 |         *en_dis = dev->ovr_en;
+      |                      ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:448:52: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  448 | int32_t ad5761r_get_short_circuit_condition(struct ad5761r_dev *dev,
+      |                                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_short_circuit_condition':
+../Core/Src/ad5761r.c:454:33: error: 'CMD_RD_CTRL_REG' undeclared (first use in this function)
+  454 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:454:28: warning: passing argument 1 of 'ad5761r_read' from incompatible pointer type [-Wincompatible-pointer-types]
+  454 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |                            ^~~
+      |                            |
+      |                            struct ad5761r_dev *
+../Core/Src/ad5761r.c:105:42: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  105 | int32_t ad5761r_read(struct ad5761r_dev *dev,
+      |                      ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c:455:28: error: 'AD5761R_CTRL_SC' undeclared (first use in this function)
+  455 |         *sc = ((reg_data & AD5761R_CTRL_SC) >> 12);
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:468:47: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  468 | int32_t ad5761r_get_brownout_condition(struct ad5761r_dev *dev,
+      |                                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_brownout_condition':
+../Core/Src/ad5761r.c:474:33: error: 'CMD_RD_CTRL_REG' undeclared (first use in this function)
+  474 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:474:28: warning: passing argument 1 of 'ad5761r_read' from incompatible pointer type [-Wincompatible-pointer-types]
+  474 |         ret = ad5761r_read(dev, CMD_RD_CTRL_REG, &reg_data);
+      |                            ^~~
+      |                            |
+      |                            struct ad5761r_dev *
+../Core/Src/ad5761r.c:105:42: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  105 | int32_t ad5761r_read(struct ad5761r_dev *dev,
+      |                      ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c:475:28: error: 'AD5761R_CTRL_BO' undeclared (first use in this function)
+  475 |         *bo = ((reg_data & AD5761R_CTRL_BO) >> 11);
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:488:38: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  488 | int32_t ad5761r_set_reset_pin(struct ad5761r_dev *dev,
+      |                                      ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_reset_pin':
+../Core/Src/ad5761r.c:491:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  491 |         if (dev->gpio_reset) {
+      |                ^~
+../Core/Src/ad5761r.c:492:20: error: invalid use of undefined type 'struct ad5761r_dev'
+  492 |                 dev->gpio_reset_value = value;
+      |                    ^~
+../Core/Src/ad5761r.c:493:24: warning: implicit declaration of function 'no_os_gpio_set_value' [-Wimplicit-function-declaration]
+  493 |                 return no_os_gpio_set_value(dev->gpio_reset,
+      |                        ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:493:48: error: invalid use of undefined type 'struct ad5761r_dev'
+  493 |                 return no_os_gpio_set_value(dev->gpio_reset,
+      |                                                ^~
+../Core/Src/ad5761r.c:494:48: error: invalid use of undefined type 'struct ad5761r_dev'
+  494 |                                             dev->gpio_reset_value);
+      |                                                ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:505:38: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  505 | int32_t ad5761r_get_reset_pin(struct ad5761r_dev *dev,
+      |                                      ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_reset_pin':
+../Core/Src/ad5761r.c:508:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  508 |         if (dev->gpio_reset) {
+      |                ^~
+../Core/Src/ad5761r.c:509:29: error: invalid use of undefined type 'struct ad5761r_dev'
+  509 |                 *value = dev->gpio_reset_value;
+      |                             ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:523:36: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  523 | int32_t ad5761r_set_clr_pin(struct ad5761r_dev *dev,
+      |                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_clr_pin':
+../Core/Src/ad5761r.c:526:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  526 |         if (dev->gpio_clr) {
+      |                ^~
+../Core/Src/ad5761r.c:527:20: error: invalid use of undefined type 'struct ad5761r_dev'
+  527 |                 dev->gpio_clr_value = value;
+      |                    ^~
+../Core/Src/ad5761r.c:528:48: error: invalid use of undefined type 'struct ad5761r_dev'
+  528 |                 return no_os_gpio_set_value(dev->gpio_clr,
+      |                                                ^~
+../Core/Src/ad5761r.c:529:48: error: invalid use of undefined type 'struct ad5761r_dev'
+  529 |                                             dev->gpio_clr_value);
+      |                                                ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:540:36: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  540 | int32_t ad5761r_get_clr_pin(struct ad5761r_dev *dev,
+      |                                    ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_clr_pin':
+../Core/Src/ad5761r.c:543:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  543 |         if (dev->gpio_clr) {
+      |                ^~
+../Core/Src/ad5761r.c:544:29: error: invalid use of undefined type 'struct ad5761r_dev'
+  544 |                 *value = dev->gpio_clr_value;
+      |                             ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:558:37: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  558 | int32_t ad5761r_set_ldac_pin(struct ad5761r_dev *dev,
+      |                                     ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_set_ldac_pin':
+../Core/Src/ad5761r.c:561:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  561 |         if (dev->gpio_ldac) {
+      |                ^~
+../Core/Src/ad5761r.c:562:20: error: invalid use of undefined type 'struct ad5761r_dev'
+  562 |                 dev->gpio_ldac_value = value;
+      |                    ^~
+../Core/Src/ad5761r.c:563:48: error: invalid use of undefined type 'struct ad5761r_dev'
+  563 |                 return no_os_gpio_set_value(dev->gpio_ldac,
+      |                                                ^~
+../Core/Src/ad5761r.c:564:48: error: invalid use of undefined type 'struct ad5761r_dev'
+  564 |                                             dev->gpio_ldac_value);
+      |                                                ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:575:37: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  575 | int32_t ad5761r_get_ldac_pin(struct ad5761r_dev *dev,
+      |                                     ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_get_ldac_pin':
+../Core/Src/ad5761r.c:578:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  578 |         if (dev->gpio_ldac) {
+      |                ^~
+../Core/Src/ad5761r.c:579:29: error: invalid use of undefined type 'struct ad5761r_dev'
+  579 |                 *value = dev->gpio_ldac_value;
+      |                             ^~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:591:45: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  591 | int32_t ad5761r_write_input_register(struct ad5761r_dev *dev,
+      |                                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_write_input_register':
+../Core/Src/ad5761r.c:596:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  596 |         if (dev->type == AD5761R)
+      |                ^~
+../Core/Src/ad5761r.c:596:26: error: 'AD5761R' undeclared (first use in this function)
+  596 |         if (dev->type == AD5761R)
+      |                          ^~~~~~~
+../Core/Src/ad5761r.c:597:28: warning: implicit declaration of function 'AD5761R_DATA' [-Wimplicit-function-declaration]
+  597 |                 reg_data = AD5761R_DATA(dac_data);
+      |                            ^~~~~~~~~~~~
+../Core/Src/ad5761r.c:599:28: warning: implicit declaration of function 'AD5721R_DATA' [-Wimplicit-function-declaration]
+  599 |                 reg_data = AD5721R_DATA(dac_data);
+      |                            ^~~~~~~~~~~~
+../Core/Src/ad5761r.c:601:35: error: 'CMD_WR_TO_INPUT_REG' undeclared (first use in this function)
+  601 |         return ad5761r_write(dev, CMD_WR_TO_INPUT_REG, reg_data);
+      |                                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:601:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  601 |         return ad5761r_write(dev, CMD_WR_TO_INPUT_REG, reg_data);
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:609:44: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  609 | int32_t ad5761r_update_dac_register(struct ad5761r_dev *dev)
+      |                                            ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_update_dac_register':
+../Core/Src/ad5761r.c:611:35: error: 'CMD_UPDATE_DAC_REG' undeclared (first use in this function)
+  611 |         return ad5761r_write(dev, CMD_UPDATE_DAC_REG, 0);
+      |                                   ^~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:611:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  611 |         return ad5761r_write(dev, CMD_UPDATE_DAC_REG, 0);
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:620:50: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  620 | int32_t ad5761r_write_update_dac_register(struct ad5761r_dev *dev,
+      |                                                  ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_write_update_dac_register':
+../Core/Src/ad5761r.c:625:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  625 |         if (dev->type == AD5761R)
+      |                ^~
+../Core/Src/ad5761r.c:625:26: error: 'AD5761R' undeclared (first use in this function)
+  625 |         if (dev->type == AD5761R)
+      |                          ^~~~~~~
+../Core/Src/ad5761r.c:630:35: error: 'CMD_WR_UPDATE_DAC_REG' undeclared (first use in this function)
+  630 |         return ad5761r_write(dev, CMD_WR_UPDATE_DAC_REG, reg_data);
+      |                                   ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:630:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  630 |         return ad5761r_write(dev, CMD_WR_UPDATE_DAC_REG, reg_data);
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:638:44: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  638 | int32_t ad5761r_software_data_reset(struct ad5761r_dev *dev)
+      |                                            ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_software_data_reset':
+../Core/Src/ad5761r.c:640:35: error: 'CMD_SW_DATA_RESET' undeclared (first use in this function)
+  640 |         return ad5761r_write(dev, CMD_SW_DATA_RESET, 0);
+      |                                   ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:640:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  640 |         return ad5761r_write(dev, CMD_SW_DATA_RESET, 0);
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:648:44: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  648 | int32_t ad5761r_software_full_reset(struct ad5761r_dev *dev)
+      |                                            ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_software_full_reset':
+../Core/Src/ad5761r.c:650:35: error: 'CMD_SW_FULL_RESET' undeclared (first use in this function)
+  650 |         return ad5761r_write(dev, CMD_SW_FULL_RESET, 0);
+      |                                   ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:650:30: warning: passing argument 1 of 'ad5761r_write' from incompatible pointer type [-Wincompatible-pointer-types]
+  650 |         return ad5761r_write(dev, CMD_SW_FULL_RESET, 0);
+      |                              ^~~
+      |                              |
+      |                              struct ad5761r_dev *
+../Core/Src/ad5761r.c:71:43: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+   71 | int32_t ad5761r_write(struct ad5761r_dev *dev,
+      |                       ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:661:29: warning: 'struct ad5761r_init_param' declared inside parameter list will not be visible outside of this definition or declaration
+  661 |                      struct ad5761r_init_param init_param)
+      |                             ^~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:660:29: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  660 | int32_t ad5761r_init(struct ad5761r_dev **device,
+      |                             ^~~~~~~~~~~
+../Core/Src/ad5761r.c:661:48: error: parameter 2 ('init_param') has incomplete type
+  661 |                      struct ad5761r_init_param init_param)
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_init':
+../Core/Src/ad5761r.c:666:56: error: invalid application of 'sizeof' to incomplete type 'struct ad5761r_dev'
+  666 |         dev = (struct ad5761r_dev *)no_os_malloc(sizeof(*dev));
+      |                                                        ^
+../Core/Src/ad5761r.c:672:15: warning: implicit declaration of function 'no_os_spi_init' [-Wimplicit-function-declaration]
+  672 |         ret = no_os_spi_init(&dev->spi_desc, &init_param.spi_init);
+      |               ^~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:672:34: error: invalid use of undefined type 'struct ad5761r_dev'
+  672 |         ret = no_os_spi_init(&dev->spi_desc, &init_param.spi_init);
+      |                                  ^~
+../Core/Src/ad5761r.c:675:16: warning: implicit declaration of function 'no_os_gpio_get' [-Wimplicit-function-declaration]
+  675 |         ret |= no_os_gpio_get(&dev->gpio_reset, &init_param.gpio_reset);
+      |                ^~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:675:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  675 |         ret |= no_os_gpio_get(&dev->gpio_reset, &init_param.gpio_reset);
+      |                                   ^~
+../Core/Src/ad5761r.c:676:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  676 |         dev->gpio_reset_value = init_param.gpio_reset_value;
+      |            ^~
+../Core/Src/ad5761r.c:677:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  677 |         ret |= no_os_gpio_get(&dev->gpio_clr, &init_param.gpio_clr);
+      |                                   ^~
+../Core/Src/ad5761r.c:678:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  678 |         dev->gpio_clr_value = init_param.gpio_clr_value;
+      |            ^~
+../Core/Src/ad5761r.c:679:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  679 |         ret |= no_os_gpio_get(&dev->gpio_ldac, &init_param.gpio_ldac);
+      |                                   ^~
+../Core/Src/ad5761r.c:680:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  680 |         dev->gpio_ldac_value = init_param.gpio_ldac_value;
+      |            ^~
+../Core/Src/ad5761r.c:682:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  682 |         if (dev->gpio_reset)
+      |                ^~
+../Core/Src/ad5761r.c:683:24: warning: implicit declaration of function 'no_os_gpio_direction_output' [-Wimplicit-function-declaration]
+  683 |                 ret |= no_os_gpio_direction_output(dev->gpio_reset,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:683:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  683 |                 ret |= no_os_gpio_direction_output(dev->gpio_reset,
+      |                                                       ^~
+../Core/Src/ad5761r.c:684:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  684 |                                                    dev->gpio_reset_value);
+      |                                                       ^~
+../Core/Src/ad5761r.c:686:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  686 |         if (dev->gpio_clr)
+      |                ^~
+../Core/Src/ad5761r.c:687:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  687 |                 ret |= no_os_gpio_direction_output(dev->gpio_clr,
+      |                                                       ^~
+../Core/Src/ad5761r.c:688:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  688 |                                                    dev->gpio_clr_value);
+      |                                                       ^~
+../Core/Src/ad5761r.c:689:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  689 |         if (dev->gpio_ldac)
+      |                ^~
+../Core/Src/ad5761r.c:690:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  690 |                 ret |= no_os_gpio_direction_output(dev->gpio_ldac,
+      |                                                       ^~
+../Core/Src/ad5761r.c:691:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  691 |                                                    dev->gpio_ldac_value);
+      |                                                       ^~
+../Core/Src/ad5761r.c:694:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  694 |         dev->type = init_param.type;
+      |            ^~
+../Core/Src/ad5761r.c:695:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  695 |         dev->ra = init_param.out_range;
+      |            ^~
+../Core/Src/ad5761r.c:696:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  696 |         dev->pv = init_param.pwr_voltage;
+      |            ^~
+../Core/Src/ad5761r.c:697:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  697 |         dev->cv = init_param.clr_voltage;
+      |            ^~
+../Core/Src/ad5761r.c:698:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  698 |         dev->int_ref_en = init_param.int_ref_en;
+      |            ^~
+../Core/Src/ad5761r.c:699:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  699 |         dev->exc_temp_sd_en = init_param.exc_temp_sd_en;
+      |            ^~
+../Core/Src/ad5761r.c:700:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  700 |         dev->b2c_range_en = init_param.b2c_range_en;
+      |            ^~
+../Core/Src/ad5761r.c:701:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  701 |         dev->ovr_en = init_param.ovr_en;
+      |            ^~
+../Core/Src/ad5761r.c:702:31: warning: passing argument 1 of 'ad5761r_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  702 |         ret |= ad5761r_config(dev);
+      |                               ^~~
+      |                               |
+      |                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:174:44: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  174 | int32_t ad5761r_config(struct ad5761r_dev *dev)
+      |                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c:704:12: error: invalid use of undefined type 'struct ad5761r_dev'
+  704 |         dev->daisy_chain_en = init_param.daisy_chain_en;
+      |            ^~
+../Core/Src/ad5761r.c:705:55: error: invalid use of undefined type 'struct ad5761r_dev'
+  705 |         ret |= ad5761r_set_daisy_chain_en_dis(dev, dev->daisy_chain_en);
+      |                                                       ^~
+../Core/Src/ad5761r.c:705:47: warning: passing argument 1 of 'ad5761r_set_daisy_chain_en_dis' from incompatible pointer type [-Wincompatible-pointer-types]
+  705 |         ret |= ad5761r_set_daisy_chain_en_dis(dev, dev->daisy_chain_en);
+      |                                               ^~~
+      |                                               |
+      |                                               struct ad5761r_dev *
+../Core/Src/ad5761r.c:197:60: note: expected 'struct ad5761r_dev *' but argument is of type 'struct ad5761r_dev *'
+  197 | int32_t ad5761r_set_daisy_chain_en_dis(struct ad5761r_dev *dev,
+      |                                        ~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/ad5761r.c: At top level:
+../Core/Src/ad5761r.c:717:31: warning: 'struct ad5761r_dev' declared inside parameter list will not be visible outside of this definition or declaration
+  717 | int32_t ad5761r_remove(struct ad5761r_dev *dev)
+      |                               ^~~~~~~~~~~
+../Core/Src/ad5761r.c: In function 'ad5761r_remove':
+../Core/Src/ad5761r.c:721:15: warning: implicit declaration of function 'no_os_spi_remove' [-Wimplicit-function-declaration]
+  721 |         ret = no_os_spi_remove(dev->spi_desc);
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:721:35: error: invalid use of undefined type 'struct ad5761r_dev'
+  721 |         ret = no_os_spi_remove(dev->spi_desc);
+      |                                   ^~
+../Core/Src/ad5761r.c:723:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  723 |         if (dev->gpio_reset)
+      |                ^~
+../Core/Src/ad5761r.c:724:24: warning: implicit declaration of function 'no_os_gpio_remove' [-Wimplicit-function-declaration]
+  724 |                 ret |= no_os_gpio_remove(dev->gpio_reset);
+      |                        ^~~~~~~~~~~~~~~~~
+../Core/Src/ad5761r.c:724:45: error: invalid use of undefined type 'struct ad5761r_dev'
+  724 |                 ret |= no_os_gpio_remove(dev->gpio_reset);
+      |                                             ^~
+../Core/Src/ad5761r.c:726:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  726 |         if (dev->gpio_clr)
+      |                ^~
+../Core/Src/ad5761r.c:727:45: error: invalid use of undefined type 'struct ad5761r_dev'
+  727 |                 ret |= no_os_gpio_remove(dev->gpio_clr);
+      |                                             ^~
+../Core/Src/ad5761r.c:729:16: error: invalid use of undefined type 'struct ad5761r_dev'
+  729 |         if (dev->gpio_ldac)
+      |                ^~
+../Core/Src/ad5761r.c:730:45: error: invalid use of undefined type 'struct ad5761r_dev'
+  730 |                 ret |= no_os_gpio_remove(dev->gpio_ldac);
+      |                                             ^~
+../Core/Src/ad5761r.c: In function 'ad5761r_config':
+../Core/Src/ad5761r.c:187:1: warning: control reaches end of non-void function [-Wreturn-type]
+  187 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_set_daisy_chain_en_dis':
+../Core/Src/ad5761r.c:204:1: warning: control reaches end of non-void function [-Wreturn-type]
+  204 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_set_reset_pin':
+../Core/Src/ad5761r.c:497:1: warning: control reaches end of non-void function [-Wreturn-type]
+  497 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_get_reset_pin':
+../Core/Src/ad5761r.c:513:1: warning: control reaches end of non-void function [-Wreturn-type]
+  513 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_set_clr_pin':
+../Core/Src/ad5761r.c:532:1: warning: control reaches end of non-void function [-Wreturn-type]
+  532 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_get_clr_pin':
+../Core/Src/ad5761r.c:548:1: warning: control reaches end of non-void function [-Wreturn-type]
+  548 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_set_ldac_pin':
+../Core/Src/ad5761r.c:567:1: warning: control reaches end of non-void function [-Wreturn-type]
+  567 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_get_ldac_pin':
+../Core/Src/ad5761r.c:583:1: warning: control reaches end of non-void function [-Wreturn-type]
+  583 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_write_input_register':
+../Core/Src/ad5761r.c:602:1: warning: control reaches end of non-void function [-Wreturn-type]
+  602 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_update_dac_register':
+../Core/Src/ad5761r.c:612:1: warning: control reaches end of non-void function [-Wreturn-type]
+  612 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_write_update_dac_register':
+../Core/Src/ad5761r.c:631:1: warning: control reaches end of non-void function [-Wreturn-type]
+  631 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_software_data_reset':
+../Core/Src/ad5761r.c:641:1: warning: control reaches end of non-void function [-Wreturn-type]
+  641 | }
+      | ^
+../Core/Src/ad5761r.c: In function 'ad5761r_software_full_reset':
+../Core/Src/ad5761r.c:651:1: warning: control reaches end of non-void function [-Wreturn-type]
+  651 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+
+12:49:43 Build Failed. 246 errors, 145 warnings. (took 598ms)
+

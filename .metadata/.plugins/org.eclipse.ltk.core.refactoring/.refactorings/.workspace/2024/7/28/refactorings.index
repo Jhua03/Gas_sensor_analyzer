@@ -1,0 +1,6 @@
+1720641023352	Delete resource 'AD5761_Test'
+1720767487203	Delete resource 'SPI_TEST/Core/Src/ad5761r.c'
+1720767490446	Delete resource 'SPI_TEST/Core/Src/ad5761r.h'
+1720767494800	Delete resource 'SPI_TEST/Core/Src/no_os_alloc.h'
+1720767498158	Delete resource 'SPI_TEST/Core/Src/no_os_gpio.h'
+1720767502329	Delete resource 'SPI_TEST/Core/Src/no_os_spi.h'

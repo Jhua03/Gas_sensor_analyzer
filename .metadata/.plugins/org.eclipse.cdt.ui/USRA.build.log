@@ -1,0 +1,10 @@
+22:15:12 **** Build of configuration Debug for project USRA ****
+make -j24 all 
+arm-none-eabi-size  USRA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32676	    468	   2308	  35452	   8a7c	USRA.elf
+Finished building: default.size.stdout
+ 
+
+22:15:12 Build Finished. 0 errors, 0 warnings. (took 202ms)
+

@@ -1,0 +1,12 @@
+vDAC
+vout
+rx_buf
+new_V_OUT_RANGE
+V_OUT_RANGE
+adc_buf
+c
+n_lim
+p_lim
+step_size
+time_interval
+state

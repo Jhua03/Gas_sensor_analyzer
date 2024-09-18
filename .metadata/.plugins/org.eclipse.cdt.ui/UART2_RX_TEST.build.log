@@ -1,0 +1,10 @@
+22:15:11 **** Build of configuration Debug for project UART2_RX_TEST ****
+make -j24 all 
+arm-none-eabi-size  UART2_RX_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13544	     12	   1788	  15344	   3bf0	UART2_RX_TEST.elf
+Finished building: default.size.stdout
+ 
+
+22:15:11 Build Finished. 0 errors, 0 warnings. (took 200ms)
+

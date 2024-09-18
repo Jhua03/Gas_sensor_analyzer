@@ -1,0 +1,10 @@
+22:15:12 **** Build of configuration Debug for project nucleo-32-L432-adc-LS ****
+make -j24 all 
+arm-none-eabi-size  nucleo-32-L432-adc-LS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  43608	    496	  22312	  66416	  10370	nucleo-32-L432-adc-LS.elf
+Finished building: default.size.stdout
+ 
+
+22:15:12 Build Finished. 0 errors, 0 warnings. (took 205ms)
+
